@@ -1,0 +1,21 @@
+package:
+  name: test_numpy
+  version: "1.11.0"
+
+build:
+  track_features:
+    - numpy111
+  features:
+    {{ os.getenv('FEAT_COMPILER') }}
+    {{ os.getenv('FEAT_PYTHON') }}
+    {{ os.getenv('FEAT_BLAS') }}
+
+requirements:
+  build:
+    {{ os.getenv('REQ_COMPILER') }}
+    {{ os.getenv('REQ_PYTHON') }}
+    {{ os.getenv('REQ_BLAS') }}
+  run:
+    - test_msvc
+    - test_python
+    {{ os.getenv('REQ_BLAS') }}

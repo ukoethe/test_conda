@@ -1,0 +1,15 @@
+package:
+  name: test_python
+  version: "3.5"
+
+build:
+  track_features:
+    - py35
+  features:
+    {{ os.getenv('FEAT_COMPILER') }}
+
+requirements:
+  build:
+    {{ os.getenv('REQ_COMPILER') }}
+  run:
+    {{ os.getenv('REQ_COMPILER') }}

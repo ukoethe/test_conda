@@ -1,0 +1,21 @@
+package:
+  name: test_numpy_exact
+  version: "1.12.0"
+
+build:
+  track_features:
+    - numpy112
+  features:
+    {{ os.getenv('FEAT_COMPILER') }}
+    {{ os.getenv('FEAT_PYTHON') }}
+    {{ os.getenv('FEAT_BLAS') }}
+
+requirements:
+  build:
+    {{ os.getenv('REQ_COMPILER') }}
+    {{ os.getenv('REQ_PYTHON') }}
+    {{ os.getenv('REQ_BLAS') }}
+  run:
+    {{ os.getenv('REQ_COMPILER') }}
+    {{ os.getenv('REQ_PYTHON') }}
+    {{ os.getenv('REQ_BLAS') }}

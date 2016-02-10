@@ -1,0 +1,15 @@
+package:
+  name: test_openblas
+  version: "0.2"
+
+build:
+  track_features:
+    - openblas0_2
+  features:
+    {{ os.getenv('FEAT_COMPILER') }}
+
+requirements:
+  build:
+    {{ os.getenv('REQ_COMPILER') }}
+  run:
+    {{ os.getenv('REQ_COMPILER') }}
